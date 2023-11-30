@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+
+</head>
+<body>
+
+    <header id="cabezote">
+        <figure id="marca"><img src="" alt=""></figure>
+        <div id="resumen">
+            <div id="disponibles">
+                <i></i>
+                <p></p>
+            </div>
+            <div id="ocupadas">
+                <i></i>
+                <p></p>
+            </div>
+        </div>
+    </header>
+
+    <main id="cuerpo">
+
+        <article id="reservas">
+            <h2>RESERVAS</h2>
+            <a href="#">Crear Reserva</a>
+            <h3>Buscar una reserva</h3>
+            <form action="/reservas" name="busca_reserva" id="busca_reserva" method="post">
+                <input type="text" name="num_reserva" id="num_reserva" pattern="[A-Z0-9]{6,15}" maxlength="15" minlength="6" placeholder="Cedula / Reserva" required>
+                <button type="submit"><i class="lni lni-search-alt"></i></button>
+            </form>
+            {{resultado_reserva}}
+            {{mensaje}}
+        
+       
+                
+        </article>
+
+        <article id="clientes">
+            <h2>CLIENTES</h2>
+            <a href="#">Crear Cliente</a>
+            <h3>Buscar un cliente</h3>
+            <form action="buscadorCliente" name="busca_cliente" id="busca_cliente" method="post">
+                <input type="text" inputmode="numeric" name="num_cliente" id="num_cliente" pattern="[0-9]{6,15}" maxlength="15" minlength="6" placeholder="Identificación / Habitación" required>
+                <button type="submit"><i class="lni lni-search-alt"></i></button>
+            </form>
+        </article>
+
+        <article id="ventas">
+            <h2>Ventas</h2>
+            <a href="#">Nueva Venta</a>
+            <a href="#">Informes de Ventas</a>
+            <h3>Precios</h3>
+            <form action="/productos" name="busca_producto" id="busca_producto" method="post">
+                <input type="text" name="busqueda_producto" id="busqueda_producto" placeholder="Palabra / Código producto" required>
+                <button type="submit"><i class="lni lni-search-alt"></i></button>
+                
+        
+
+            </form>
+            {{resultado_producto}}
+            {{mensaje}}
+            
+        </article>
+        
+        
+        <article id="facturas">
+            <h2>FACTURAS</h2>
+            <a href="#">Cobrar Factura</a>
+            <a href="#">Cerrar Factura</a>
+            <h3>Buscar factura</h3>
+            <form action="buscadorFactura" name="busca_factura" id="busca_factura" method="post">
+                <input type="text" inputmode="numeric" name="num_factura" id="num_factura" pattern="[0-9]{2,5}" maxlength="5" minlength="2" placeholder="# de habitación" required>
+                <button type="submit"><i class="lni lni-search-alt"></i></button>
+            </form>
+
+        </article>
+    </main>
+
+</body>
+</html>
